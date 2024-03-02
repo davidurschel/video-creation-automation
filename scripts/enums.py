@@ -1,5 +1,5 @@
 from enum import Enum
 
-class enums(Enum):
+class Status(Enum):
     SUCCESS=0
     FAIL=1
