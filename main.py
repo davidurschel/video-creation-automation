@@ -1,5 +1,5 @@
 from clip_functions import make_clips
-from upload_functions import upload_video
+
 
 while(True):
     print("\nWelcome to the CLI...")
@@ -11,7 +11,5 @@ while(True):
         make_clips()
     elif choice=="3":
         exit()
-
-
 
 
