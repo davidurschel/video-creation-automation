@@ -17,7 +17,7 @@ def combine_clips(video_filepath:str, audio_filepath:str, subtitles_on:bool=True
     vid_dur = vid.duration
 
     aud:AudioClip = AudioFileClip(audio_filepath)
-    aud_dur = aud.duration
+    aud_dur = aud.duration + 1.0
 
     vid_start_time = random() * (vid_dur-aud_dur)
     vid = vid.subclip(vid_start_time, vid_start_time+aud_dur)
@@ -47,11 +47,13 @@ def make_clips():
 
         # Move the file to the output folder
         dst = USED_TTS_FILEPATH + input_tts
-        print(dst)
         if os.path.exists(dst):
             os.remove(dst)
         shutil.move(NEW_TTS_FILEPATH + input_tts, USED_TTS_FILEPATH)
 
+        dst = OUTPUT_FILEPATH + output_filename + codec
+        if os.path.exists(dst):
+            os.remove(dst)
         shutil.move(output_filename + codec, OUTPUT_FILEPATH)
         
     else:
