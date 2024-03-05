@@ -20,7 +20,6 @@ def combine_clips(video_filepath:str, audio_filepath:str, subtitles_on:bool=True
     aud_dur = aud.duration
 
     vid_start_time = random() * (vid_dur-aud_dur)
-    print(vid_start_time)
     vid = vid.subclip(vid_start_time, vid_start_time+aud_dur)
     
 
@@ -41,7 +40,7 @@ def make_clips():
     for input_tts in os.listdir(NEW_TTS_FILEPATH):
         print(BACKGROUND_VIDEO_FILEPATH + input_tts)
         clip1 = combine_clips(BACKGROUND_VIDEO_FILEPATH + bg_files[floor(randrange(len(bg_files)))], NEW_TTS_FILEPATH + input_tts)
-        output_filename = "Youtube_Short_" + str(time.time())
+        output_filename = input_tts
 
         codec = ".mp4"
         save_clip(clip1, output_filename, codec=codec)
