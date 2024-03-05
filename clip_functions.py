@@ -1,6 +1,5 @@
 from moviepy.editor import VideoFileClip, AudioFileClip, VideoClip, AudioClip, TextClip
 from random import randint, random
-import time
 import shutil
 import os
 from random import randrange
@@ -34,16 +33,16 @@ def combine_clips(video_filepath:str, audio_filepath:str, subtitles_on:bool=True
 def save_clip(clip:VideoFileClip, clipName:str, codec:str=".mp4"):
     clip.write_videofile(clipName+codec, fps=60)
 
-def make_clips():
+def make_clips(title:str):
     bg_files = os.listdir(BACKGROUND_VIDEO_FILEPATH)
 
     for input_tts in os.listdir(NEW_TTS_FILEPATH):
         print(BACKGROUND_VIDEO_FILEPATH + input_tts)
         clip1 = combine_clips(BACKGROUND_VIDEO_FILEPATH + bg_files[floor(randrange(len(bg_files)))], NEW_TTS_FILEPATH + input_tts)
-        output_filename = input_tts
+        title
 
         codec = ".mp4"
-        save_clip(clip1, output_filename, codec=codec)
+        save_clip(clip1, title, codec=codec)
 
         # Move the file to the output folder
         dst = USED_TTS_FILEPATH + input_tts
@@ -51,10 +50,10 @@ def make_clips():
             os.remove(dst)
         shutil.move(NEW_TTS_FILEPATH + input_tts, USED_TTS_FILEPATH)
 
-        dst = OUTPUT_FILEPATH + output_filename + codec
+        dst = OUTPUT_FILEPATH + title + codec
         if os.path.exists(dst):
             os.remove(dst)
-        shutil.move(output_filename + codec, OUTPUT_FILEPATH)
+        shutil.move(title + codec, OUTPUT_FILEPATH)
         
     else:
         print("\nNo source audio available")

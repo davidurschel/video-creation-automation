@@ -7,9 +7,9 @@ def whole_shabang():
     print(f"Script for '{title}' is finished")
     print("Generating audio...")
     generate_audio(title=title, text=script)
-    print(f"Audio for '{title}' is finished")
-    print("Making clips")
-    make_clips()
+    print(f"Audio for '{title}' is Finished")
+    print("Making clips...")
+    make_clips(title)
 
 
 while(True):
