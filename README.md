@@ -1,5 +1,5 @@
 # Video Creation Automation
-Automatically scrapes the internet for top performing forum "story" posts, converts into AI tts and adds entertaining video, uploads to youtube using creator API
+Generates engaging script and TTS clip, converts into AI tts and adds background video, uploads to youtube using creator API
 
 ## Running Instructions
 Running instructions will be added once base functionality is achieved...
