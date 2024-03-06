@@ -1,6 +1,7 @@
 from clip_functions import make_clips
 from make_script import make_script, get_random_prompt
 from generate_audio import generate_audio
+import time
 
 def whole_shabang():
     title, script = make_script(prompt=get_random_prompt())
@@ -21,7 +22,10 @@ while(True):
     if choice=="1":
         make_clips()
     if choice=="2":
+        start = time.time()
         whole_shabang()
+        end = time.time()
+        print(end-start)
     elif choice=="3":
         exit()
 

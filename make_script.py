@@ -4,7 +4,7 @@ def clean_message(content:str) -> str:
     return " ".join(content.split('\n'))
 
 def get_random_prompt() -> str:
-    prompt = "Give me a daily fitness tip about discipline and success, make it 5-7 sentences long"
+    prompt = "Say only the riddle and the solution. Do not say 'ok' or any other acknowledgement. Give me a riddle that is 5-7 sentences long, then say the solution."
     return prompt
 
 def make_script(prompt:str, model:str="llama2") -> str:
@@ -16,6 +16,6 @@ def make_script(prompt:str, model:str="llama2") -> str:
     ])
 
     content = res["message"]["content"]
-    title = "Fitness tip of the Day"
+    title = "Daily brain teaser"
 
     return title, clean_message(content)
