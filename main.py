@@ -3,6 +3,7 @@ from make_script import make_script, get_random_prompt
 from generate_audio import generate_audio
 import time
 import os
+from string import ascii_letters
 
 def whole_shabang(title:str, script:str):
     print("Generating audio...")
@@ -22,7 +23,7 @@ def get_text_source(directory):
             # Read the content of the text file
             with open(filepath, 'r') as file:
                 content = file.read()
-                text.append((filename[:-4], content))
+                text.append((filename[:-4], ''.join([char for char in content if char in (ascii_letters + " .?,!1234567890\n")])))
     return text
 
 
@@ -42,7 +43,6 @@ while(True):
         end = time.time()
         print(end-start)
     elif choice=="3":
-        print(os.listdir("video_files/"))
         text_sources = get_text_source("video_files/input_txt_files/")
         for ts in text_sources:
             whole_shabang(ts[0], ts[1])
