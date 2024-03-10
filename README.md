@@ -1,6 +1,6 @@
 # Video Creation Automation
 
-Automatically creates videos with AI voiceover for Youtube shorts and TikToks with Subtitles. Import your own audio, video, script, or let everything be handled by an LLM such as `LLaMa2` ran through `OLLaMa`.
+Automatically creates videos with AI voiceover for Youtube shorts and TikToks with Subtitles. Import your own audio, video, script, or let everything be handled by an LLM such as `LLaMa2` ran through `OLLaMa`. Check out some sample outputs here: https://www.youtube.com/channel/UC8mYA_6kYQrLjPakonXC_Iw
 
 ## Running Instructions
 
