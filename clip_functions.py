@@ -33,13 +33,13 @@ def combine_clips(video_filepath:str, audio_filepath:str, subtitles_on:bool=True
 def save_clip(clip:VideoFileClip, clipName:str, codec:str=".mp4"):
     clip.write_videofile(clipName+codec, fps=60)
 
-def make_clips(title:str):
+def make_clips():
     bg_files = os.listdir(BACKGROUND_VIDEO_FILEPATH)
 
     for input_tts in os.listdir(NEW_TTS_FILEPATH):
         print(BACKGROUND_VIDEO_FILEPATH + input_tts)
         clip1 = combine_clips(BACKGROUND_VIDEO_FILEPATH + bg_files[floor(randrange(len(bg_files)))], NEW_TTS_FILEPATH + input_tts)
-        title
+        title = input_tts[-4]
 
         codec = ".mp4"
         save_clip(clip1, title, codec=codec)

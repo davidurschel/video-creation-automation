@@ -10,7 +10,7 @@ def whole_shabang(title:str, script:str):
     generate_audio(title=title, text=script)
     print(f"Audio for '{title}' is Finished")
     print("Making clips...")
-    make_clips(title)
+    make_clips()
     return
 
 def get_text_source(directory):
